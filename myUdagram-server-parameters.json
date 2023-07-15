@@ -1,0 +1,14 @@
+[
+	{
+		"ParameterKey": "EnvironmentName",
+		"ParameterValue": "myUdagramWebapp"
+	},
+	{
+		"ParameterKey": "myS3Bucket",
+		"ParameterValue": "my504793965814"
+	},
+	{
+		"ParameterKey": "myArchiveFile",
+		"ParameterValue": "MyUdagram.zip"
+	}
+]
