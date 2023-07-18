@@ -21,7 +21,6 @@ jobs:
     # Add steps to the job
     steps:
       - checkout
-      - requires: print-hello
       - run: echo "world"
 
 
@@ -31,4 +30,6 @@ workflows:
   say-hello-workflow:
     jobs:
       - print-hello
-      - print-world
+      - print-world:
+          requires: 
+            - print-hello
