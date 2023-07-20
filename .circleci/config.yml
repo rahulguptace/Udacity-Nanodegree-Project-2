@@ -20,9 +20,7 @@ jobs:
     steps:
       - print_pipeline_id:
           to : $CIRCLE_WORKFLOW_ID
-      - run: 
-          name: Bash
-          command: bash return 1
+      - run: exit 1
       - run:
           name: Fail
           command: echo "When Failed"
