@@ -7,8 +7,7 @@ commands:
     description: "A simple command to print the pipeline id"
     parameters:
       to:
-        type: String
-        default: "Default"
+        type: env_var_name
     steps:
       - run: echo pipeline_id <<parameters.to>>
 
