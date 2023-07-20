@@ -20,7 +20,9 @@ jobs:
     steps:
       - print_pipeline_id:
           to : $CIRCLE_WORKFLOW_ID
-      - run: echo "Run on Failure"
+      - run:
+          name: Fail
+          command: echo "When Failed"
           when: on_fail 
 
 # Orchestrate jobs using workflows
