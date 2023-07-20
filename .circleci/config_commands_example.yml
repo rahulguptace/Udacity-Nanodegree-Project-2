@@ -10,15 +10,12 @@ commands:
         type: string
     steps:
       - run: echo pipeline-id <<parameters.to>>
-      - run: return 1
-      - run: echo "Run on Failure"
-          when: on_fail 
 
 jobs:
   myjob:
     # Specify the execution environment. You can specify an image from Docker Hub or use one of our convenience images from CircleCI's Developer Hub.
     docker:
-      - image: "circleci/node:13.8.0"
+      - image: "cimg/base:stable"
     # Add steps to the job
     steps:
       - print_pipeline_id:
