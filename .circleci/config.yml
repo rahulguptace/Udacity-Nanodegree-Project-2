@@ -10,7 +10,7 @@ jobs:
     docker:
       - image: circleci/node:13.8.0
     # Add steps to the job
-    working_directory: .
+    working_directory: C:\
     steps:
       - run: echo "Hello World!!!" > output.txt
       - persist_to_workspace:
@@ -23,7 +23,7 @@ jobs:
     docker:
       - image: circleci/node:13.8.0
     # Add steps to the job
-    working_directory: .
+    working_directory: C:\s
     steps:
       - attach_workspace:
           at: .
