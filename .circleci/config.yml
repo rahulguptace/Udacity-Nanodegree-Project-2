@@ -10,26 +10,26 @@ jobs:
     docker:
       - image: circleci/node:13.8.0
     # Add steps to the job
-    working_directory: /tmp
+    working_directory: .
     steps:
       - run: echo "Hello World!!!" > output.txt
       - persist_to_workspace:
+          root: .
           paths:
-            - /tmp/output.txt
+            - output.txt
 
   print_output_file:
     # Specify the execution environment. You can specify an image from Docker Hub or use one of our convenience images from CircleCI's Developer Hub.
     docker:
       - image: circleci/node:13.8.0
     # Add steps to the job
-    working_directory: /tmp
+    working_directory: .
     steps:
       - attach_workspace:
-          at: /tmp
-      - run: cat /tmp/output.txt
+          at: .
+      - run: cat output.txt
 
 # Orchestrate jobs using workflows
-
 workflows:
   myworkflow:
     jobs:
