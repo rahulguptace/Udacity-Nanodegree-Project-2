@@ -10,9 +10,6 @@ commands:
         type: string
     steps:
       - run: echo pipeline-id <<parameters.to>>
-      - run: return 1
-      - run: echo "Run on Failure"
-          when: on_fail 
 
 jobs:
   myjob:
@@ -23,6 +20,8 @@ jobs:
     steps:
       - print_pipeline_id:
           to : $CIRCLE_WORKFLOW_ID
+      - run: echo "Run on Failure"
+          when: on_fail 
 
 # Orchestrate jobs using workflows
 workflows:
